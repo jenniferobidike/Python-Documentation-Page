@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+   <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <nav id='navbar'>
+      <header>Python Documentation</header>
+      <ul>
+        <li>
+          <a class="nav-link" href="#The_python_tutorial">The python tutorial</a>
+        </li>
+        <li><a class="nav-link" href="#Using_the_python_interpreter">Using the python interpreter</a></li>
+        <li><a class="nav-link" href="#Using_python_as_a_calculator">Using python as a calculator</a></li>
+        <li><a class="nav-link" href="#Numbers">Numbers</a></li>
+        <li><a class="nav-link" href="#Strings">Strings</a></li>
+        <li><a class="nav-link" href="#Lists">Lists</a></li>
+        <li><a class="nav-link" href="#if_Statements">if Statements</a></li>
+        <li><a class="nav-link" href="#for_Statements">for Statements</a></li>
+        <li><a class="nav-link" href="#The_range()_Function">The range() Function</a></li>
+        <li><a class="nav-link" href="#Defining_functions">Defining functions</a></li>
+        <li><a class="nav-link" href="#Reference">Reference</a></li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+  <section class="main-section" id="The_python_tutorial" >
+      <header>The python tutorial</header>
+        <article>
+          <p>
+            Python is an easy to learn, powerful programming language. It has efficient high-level data structures and a simple but effective approach to object-oriented programming. Python’s elegant syntax and dynamic typing, together with its interpreted nature, make it an ideal language for scripting and rapid application development in many areas on most platforms.
+          </p>
+          <p>
+            This tutorial does not attempt to be comprehensive and cover every single feature, or even every commonly used feature. Instead, it introduces many of Python’s most noteworthy features, and will give you a good idea of the language’s flavor and style. 
+          </p>
+        </article>
+    </section>
+    <section class="main-section" id="Using_the_python_interpreter">
+      <header>Using the python interpreter</header>
+      <p>The Python interpreter is usually installed as /usr/local/bin/python3.10 on those machines where it is available; putting /usr/local/bin in your Unix shell’s search path makes it possible to start it by typing the command: <code>python3.10</code>
+to the shell</p>
+<p>The following steps are needed to get the python interpreter running and ready to use:</p>
+<ul>
+  <li>Installing the interpreter</li>
+  <li>Starting the interpreter</li>
+  <li>Passing an argument</li>
+  <li>Entering interactive mode</li>
+  <li>Understanding the interpreter and its environment</li>
+</ul>
+    </section>
+    <section class="main-section" id="Using_python_as_a_calculator" >
+      <header>Using python as a calculator</header>
+        <article>
+          <p>
+            Input and output are distinguished by the presence or absence of prompts (>>> and …): You must type everything after the prompt, when the prompt appears; lines that do not begin with a prompt are output from the interpreter. Note that a secondary prompt on a line by itself in an example means you must type a blank line; this is used to end a multi-line command.
+          </p>
+
+        </article>
+    </section>
+    <section class="main-section" id="Numbers">
+      <header>Numbers</header>
+        <article>
+          The interpreter acts as a simple calculator: you can type an expression at it and it will write the value. Expression syntax is straightforward: the operators +, -, * and / work just like in most other languages (for example, Pascal or C); parentheses (()) can be used for grouping. For example:<code>  >>>2 + 2
+4
+>>> 50 - 5*6
+20
+>>> (50 - 5*6) / 4
+5.0
+>>> 8 / 5  # division always returns a floating point number
+1.6</code>
+<p>The integer numbers (e.g. 2, 4, 20) have type int, the ones with a fractional part (e.g. 5.0, 1.6) have type float.</p>
+        </article>
+    </section>
+    <section class="main-section" id="Strings">
+      <header>Strings</header>
+        <article>
+          <p>
+            Besides numbers, Python can also manipulate strings, which can be expressed in several ways. They can be enclosed in single quotes ('...') or double quotes ("...") with the same result 2. \ can be used to escape quotes: <code>>>> 'spam eggs'  # single quotes
+'spam eggs'
+>>> 'doesn\'t'  # use \' to escape the single quote...
+"doesn't"
+>>> "doesn't"  # ...or use double quotes instead
+"doesn't"</code>
+          </p>
+          <p>
+            In the interactive interpreter, the output string is enclosed in quotes and special characters are escaped with backslashes. While this might sometimes look different from the input (the enclosing quotes could change), the two strings are equivalent. The string is enclosed in double quotes if the string contains a single quote and no double quotes, otherwise it is enclosed in single quotes. The print() function produces a more readable output, by omitting the enclosing quotes and by printing escaped and special characters: <code>>>> '"Isn\'t," they said.'
+'"Isn\'t," they said.'
+>>> print('"Isn\'t," they said.')
+"Isn't," they said.</code>
+          </p>
+        </article>
+    </section>
+    <section class="main-section" id="Lists">
+      <header>Lists</header>
+        <article>
+          <p>
+            Python knows a number of compound data types, used to group together other values. The most versatile is the list, which can be written as a list of comma-separated values (items) between square brackets. Lists might contain items of different types, but usually the items all have the same type.<code>>>> squares = [1, 4, 9, 16, 25]
+>>> squares
+[1, 4, 9, 16, 25]</code>
+          </p>
+          <p>
+            Like strings (and all other built-in sequence types), lists can be indexed and sliced:<code>
+              >>> squares[0]  # indexing returns the item
+1
+>>> squares[-1]
+25
+>>> squares[-3:]  # slicing returns a new list
+[9, 16, 25]
+            </code>
+          </p>
+        </article>
+    </section>
+    <section class="main-section" id="if_Statements">
+      <header>if Statements</header>
+        <p> The most well-known statement type is the if statement. For example: <code>>>> x = int(input("Please enter an integer: "))
+Please enter an integer: 42
+>>> if x < 0:
+...     x = 0
+...     print('Negative changed to zero')
+... elif x == 0:
+...     print('Zero')
+... elif x == 1:
+...     print('Single')
+... else:
+...     print('More')</code>
+        </p>
+        <p>
+          There can be zero or more elif parts, and the else part is optional. The keyword ‘elif’ is short for ‘else if’, and is useful to avoid excessive indentation. An if … elif … elif … sequence is a substitute for the switch or case statements found in other languages.
+        </p>
+    </section>
+    <section class="main-section" id="for_Statements">
+      <header>for Statements</header>
+      <article>
+        <p>
+          The for statement in Python differs a bit from what you may be used to in C or Pascal. Rather than always iterating over an arithmetic progression of numbers (like in Pascal), or giving the user the ability to define both the iteration step and halting condition (as C), Python’s for statement iterates over the items of any sequence (a list or a string), in the order that they appear in the sequence. For example (no pun intended): <code>
+            >>> # Measure some strings:
+... words = ['cat', 'window', 'defenestrate']
+>>> for w in words:
+...     print(w, len(w))
+...
+cat 3
+window 6
+defenestrate 12
+          </code>
+        </p>
+      </article>
+    </section>
+    <section class="main-section" id="The_range()_Function" >
+      <header>The range() Function</header>
+      <article><p>
+        If you do need to iterate over a sequence of numbers, the built-in function range() comes in handy. It generates arithmetic progressions: <code>>>> for i in range(5):
+...     print(i)
+...
+0
+1
+2
+3
+4</code>
+      </p>
+      <p>
+        To iterate over the indices of a sequence, you can combine range() and len() as follows: <code>
+          >>> a = ['Mary', 'had', 'a', 'little', 'lamb']
+>>> for i in range(len(a)):
+...     print(i, a[i])
+...
+0 Mary
+1 had
+2 a
+3 little
+4 lamb
+        </code>
+      </p></article>
+    </section>
+    <section class="main-section" id="Defining_functions">
+      <header>Defining functions</header>
+      <article>
+        <p>The keyword def introduces a function definition. It must be followed by the function name and the parenthesized list of formal parameters. The statements that form the body of the function start at the next line, and must be indented.</p>
+        <p>We can create a function that writes the Fibonacci series to an arbitrary boundary: <code>>>> def fib(n):    # write Fibonacci series up to n
+...     """Print a Fibonacci series up to n."""
+...     a, b = 0, 1
+...     while a < n:
+...         print(a, end=' ')
+...         a, b = b, a+b
+...     print()
+...
+>>> # Now call the function we just defined:
+... fib(2000)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597</code></p>
+      </article>
+    </section>
+    <section class="main-section" id="Reference">
+    <header>Reference</header>
+    <article><p>All the documentation in this page is taken from <a href="https://docs.python.org/3/tutorial/index.html" target="_blank">The Python Tutorial.</a></p></article>
+    </section>
+    </main>
+</body>
+</html>
